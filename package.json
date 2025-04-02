@@ -1,0 +1,52 @@
+{
+  "name": "@joytify/shared-types",
+  "version": "1.1.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/esm/types/index.js",
+      "require": "./dist/cjs/types/index.js",
+      "types": "./dist/esm/types/index.d.ts"
+    },
+    "./constants": {
+      "import": "./dist/esm/constants/index.js",
+      "require": "./dist/cjs/constants/index.js",
+      "types": "./dist/esm/constants/index.d.ts"
+    },
+    "./classes": {
+      "import": "./dist/esm/classes/index.js",
+      "require": "./dist/cjs/classes/index.js",
+      "types": "./dist/esm/classes/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JIAN11442/joytify-shared-types.git"
+  },
+  "keywords": [],
+  "author": "JIAN",
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.2"
+  }
+}
