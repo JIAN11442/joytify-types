@@ -5,7 +5,7 @@ export enum LabelOptions {
   THEME = "theme",
   FEATURE = "feature",
   REGION = "region",
-  ALBUM = "album",
-  CREATE = "create",
+  COUNTRY = "country",
+  GENDER = "gender",
   NULL = "null",
 }

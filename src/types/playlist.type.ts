@@ -1,4 +1,4 @@
-import { SongResponse } from "./song.type";
+import { RefactorSongResponse, SongResponse } from "./song.type";
 import { HexPaletee } from "./paletee.type";
 import { PrivacyType } from "./privacy.type";
 
@@ -9,14 +9,18 @@ export interface GetPlaylistsRequest {
 
 export interface CreatePlaylistRequest {
   title?: string;
+  description?: string;
+  coverImage?: string;
+  addedSongs?: string[];
 }
 
 export interface UpdatePlaylistRequest {
   playlistId: string;
   title?: string;
   description?: string;
-  cover_image?: string;
+  coverImage?: string;
   privacy?: PrivacyType;
+  removedSongs?: string[];
 }
 
 export interface DeletePlaylistRequest {
@@ -32,11 +36,15 @@ export interface PlaylistResponse {
   user: string;
   title: string;
   description?: string;
-  cover_image: string;
+  coverImage: string;
   privacy: PrivacyType;
   default: boolean;
   paletee: HexPaletee;
   songs: string[];
+  stats: {
+    totalSongCount: number;
+    totalSongDuration: number;
+  };
   createdAt: Date;
   updatedAt: Date;
 }
@@ -51,18 +59,13 @@ export type PopulatedPlaylistResponse = Omit<PlaylistResponse, "songs"> & {
 
 /* get playlist by id - refactor song's params */
 export type RefactorPlaylistResponse = Omit<PopulatedPlaylistResponse, "songs"> & {
-  songs: (Omit<SongResponse, "artist" | "composers" | "lyricists" | "languages"> & {
-    artist: string;
-    composers: string;
-    lyricists: string;
-    languages: string;
-  })[];
+  songs: RefactorSongResponse[];
 };
 
 // ===================== Other Types =====================
 export type Playlist = {
   _id: string;
   title: string;
-  cover_image: string;
+  coverImage: string;
   description?: string;
 };

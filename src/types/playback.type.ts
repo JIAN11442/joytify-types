@@ -1,12 +1,14 @@
 import { PlaybackStateOptions } from "../constants/playback.constant";
+import { RefactorSongResponse } from "./song.type";
+import { NonEmptyArray } from "./util.type";
 
 // ===================== Request Types =====================
 
-export interface StorePlaybackLogRequest {
+export interface CreatePlaybackLogRequest {
   songId: string;
   duration: number;
   state: PlaybackStateType;
-  timestamp: Date;
+  // timestamp: Date;
 }
 
 // ===================== Response Types =====================
@@ -35,4 +37,16 @@ export type PlaybackSong = {
   id: string;
   artist: string;
   playbacks: PlaybackStats[];
+};
+
+export type Queue = NonEmptyArray<RefactorSongResponse>;
+
+export type PlaybackQueueWithObjects = {
+  queue: Queue;
+  currentIndex: number;
+};
+
+export type PlaybackQueueWithIds = {
+  queue: string[];
+  currentIndex: number;
 };

@@ -1,7 +1,7 @@
-export enum PasswordResetStatus {
+export enum PasswordUpdateStatus {
   INITIAL = "initial",
   SUCCESS = "success",
-  FAILED = "failed",
+  FAILURE = "failure",
 }
 
 export enum ProfileCollections {
@@ -9,4 +9,11 @@ export enum ProfileCollections {
   SONGS = "songs",
   ALBUMS = "albums",
   FOLLOWING = "following",
+}
+
+export enum AccountDeregistrationStatus {
+  INITIAL_CONFIRMATION = "initial_confirmation",
+  DATA_DONATION = "data_donation",
+  SUCCESS = "success",
+  FAILURE = "failure",
 }

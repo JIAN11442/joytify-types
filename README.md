@@ -1,76 +1,216 @@
-# @joytify/shared-types
+# <img src="https://mern-joytify-bucket-yj.s3.ap-northeast-1.amazonaws.com/defaults/joytify-logo.svg" alt="Joytify" width="26" height="26"> @joytify/shared-types
 
-Internal shared types, constants, and utility classes for Joytify project. This package is specifically designed for Joytify's frontend and backend development.
+> **Internal shared types, constants, and utility classes for Joytify project** - A comprehensive TypeScript package providing type safety and consistency across frontend and backend development
 
-> **Note**: This is an internal package for Joytify project only. Not intended for public use.
+## 📋 Project Documentation
 
-## Installation
+- **🏠 [Main Application](https://github.com/JIAN11442/MERN-Joytify/tree/main)** - Application overview, tech stack, features
+- **🏗️ [Infrastructure Pipeline](https://github.com/JIAN11442/MERN-Joytify/tree/main/terraform)** - AWS Lambda processing pipeline, capacity analysis
+- **📚 [Shared Types](./README.md)** - Shared TypeScript interfaces _(You are here)_
+
+---
+
+## 📋 Table of Contents
+
+- [🎯 Overview](#-overview)
+- [🚀 Quick Start](#-quick-start)
+- [📦 Package Structure](#-package-structure)
+- [🔧 API Reference](#-api-reference)
+- [🛠️ Development](#️-development)
+
+---
+
+## 🎯 Overview
+
+**@joytify/shared-types** is the core TypeScript package that powers Joytify's full-stack development ecosystem. This package provides a unified set of types, constants, and utility classes that ensure type safety and consistency across frontend and backend applications.
+
+### Key Features
+
+- **🔒 Type Safety** - Comprehensive TypeScript interfaces for all data structures
+- **🔄 Consistency** - Shared constants and enums across frontend/backend
+- **⚡ Performance** - Optimized for both ESM and CommonJS environments
+- **🎯 Modular** - Subpath exports for selective imports
+- **🛡️ Validation** - Zod-compatible type definitions
+
+### Supported Formats
+
+- **ESM** - Modern ES modules for tree-shaking and better performance
+- **CommonJS** - Legacy compatibility for older environments
+- **TypeScript** - Full type definitions and IntelliSense support
+
+---
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 npm install @joytify/shared-types
 ```
 
-## Features
+📦 **Package**: [@joytify/shared-types on npm](https://www.npmjs.com/package/@joytify/shared-types)
 
-### Types
-
-- Authentication and user management types
-- Playlist and song structures
-- Album and musician definitions
-- Playback and verification types
-- AWS, privacy, and HTTP interfaces
-
-### Constants
-
-- Authentication and user settings
-- Label and musician configurations
-- Playback and verification rules
-- AWS, privacy, and HTTP constants
-- Error handling definitions
-
-### Classes
-
-- Error handling utilities
-
-## Usage
-
-### Import Types
+### Usage
 
 ```typescript
-import { User, Playlist, Song } from "@joytify/shared-types";
-```
+// Import specific types
+import { User, Playlist, Song } from "@joytify/shared-types/types";
 
-### Import Constants
-
-```typescript
+// Import constants
 import { API_ENDPOINTS, PRIVACY_OPTIONS } from "@joytify/shared-types/constants";
-```
 
-### Import Classes
-
-```typescript
+// Import utility classes
 import { AppError } from "@joytify/shared-types/classes";
 ```
 
-## Development
+---
 
-### Build
-
-```bash
-npm run build
-```
-
-This will generate both ESM and CommonJS builds in the `dist` directory.
-
-### Project Structure
+## 📦 Package Structure
 
 ```
 src/
-  ├── types/      # TypeScript type definitions
-  ├── constants/  # Shared constants
-  └── classes/    # Utility classes
+├── types/          # TypeScript type definitions (25 files)
+│   ├── auth.type.ts
+│   ├── user.type.ts
+│   ├── song.type.ts
+│   ├── playlist.type.ts
+│   ├── album.type.ts
+│   ├── musician.type.ts
+│   ├── notification.type.ts
+│   ├── stats.type.ts
+│   ├── playback.type.ts
+│   ├── session.type.ts
+│   ├── device.type.ts
+│   ├── network.type.ts
+│   ├── cookie.type.ts
+│   ├── player.type.ts
+│   ├── gender.type.ts
+│   ├── locale.type.ts
+│   ├── error.type.ts
+│   ├── privacy.type.ts
+│   ├── aws.type.ts
+│   ├── http.type.ts
+│   ├── label.type.ts
+│   ├── paletee.type.ts
+│   ├── verification.type.ts
+│   └── util.type.ts
+├── constants/      # Shared constants (17 files)
+│   ├── api.constant.ts
+│   ├── auth.constant.ts
+│   ├── user.constant.ts
+│   ├── song.constant.ts
+│   ├── playlist.constant.ts
+│   ├── album.constant.ts
+│   ├── musician.constant.ts
+│   ├── notification.constant.ts
+│   ├── stats.constant.ts
+│   ├── playback.constant.ts
+│   ├── session.constant.ts
+│   ├── device.constant.ts
+│   ├── network.constant.ts
+│   ├── aws.constant.ts
+│   ├── http.constant.ts
+│   ├── label.constant.ts
+│   └── verification.constant.ts
+└── classes/        # Utility classes (1 file)
+    └── error.class.ts
 ```
 
-## License
+---
 
-MIT
+## 🔧 API Reference
+
+### Core Type Categories
+
+#### 🎵 **Music & Playback**
+
+- Song, Album, Playlist structures
+- Playback queue and controls
+- Artist and musician definitions
+- Audio metadata and formats
+
+#### 👤 **User & Authentication**
+
+- User profiles and preferences
+- Authentication requests/responses
+- Session management
+- Privacy and security types
+
+#### 📊 **Statistics & Analytics**
+
+- Monthly user statistics
+- Playback analytics
+- Peak hour tracking
+- Growth metrics
+
+#### 🔔 **Notifications & Communication**
+
+- Real-time notifications
+- System announcements
+- User alerts
+- Socket events
+
+#### 🛠️ **System & Utilities**
+
+- Error handling
+- HTTP constants
+- AWS integration
+- Device and network types
+
+### Constants & Enums
+
+- **API_ENDPOINTS** - RESTful API routes
+- **HTTP_CODES** - Status codes and error handling
+- **PRIVACY_OPTIONS** - User privacy settings
+- **NOTIFICATION_TYPES** - Notification categories
+- **DEVICE_TYPES** - Device classification
+- **LOCALE_OPTIONS** - Internationalization support
+
+---
+
+## 🛠️ Development
+
+### Prerequisites
+
+- **Node.js** >= 18.0.0
+- **TypeScript** >= 5.0.0
+- **npm** >= 9.0.0
+
+### Build Process
+
+```bash
+# Install dependencies
+npm install
+
+# Build for both ESM and CommonJS
+npm run build
+
+# Check build output
+ls dist/
+# ├── cjs/     # CommonJS build
+# └── esm/     # ESM build
+```
+
+### Publishing
+
+```bash
+# Login to npm (first time only)
+npm login
+
+# Build the package
+npm run build
+
+# Publish to npm
+npm publish
+```
+
+### Version Management
+
+```bash
+# Update version
+npm version patch  # 1.2.0 → 1.2.1
+npm version minor  # 1.2.0 → 1.3.0
+npm version major  # 1.2.0 → 2.0.0
+```
+
+---

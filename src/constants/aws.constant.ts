@@ -3,6 +3,7 @@ export enum UploadFolder {
   SONGS_IMAGE = "songs/image",
   PLAYLISTS_IMAGE = "playlists/image",
   ALBUMS_IMAGE = "albums/image",
+  MUSICIANS_IMAGE = "musicians/image",
   USERS_IMAGE = "users/image",
 }
 

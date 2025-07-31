@@ -7,9 +7,10 @@ export interface CreateLabelRequest {
   type: LabelOptionsType;
 }
 
-export interface GetLabelsIdRequest {
-  labels?: string[];
+export interface GetLabelIdRequest {
+  label: string;
   type: LabelOptionsType;
+  default?: boolean;
   createIfAbsent?: boolean;
 }
 
@@ -18,6 +19,7 @@ export interface LabelResponse {
   _id: string;
   label: string;
   type: LabelOptionsType;
+  index?: number;
   users: string[];
   songs: string[];
   default: boolean;
@@ -45,6 +47,5 @@ type LabelItems = {
   tag: Label[];
   region: Label[];
   language: Label[];
-  theme: Label[];
-  album: Label[];
+  gender: Label[];
 };
