@@ -14,11 +14,15 @@ export interface CreatePlaybackLogRequest {
 // ===================== Response Types =====================
 
 export interface PlaybackLogResponse {
-  _id: string;
-  user: string;
-  songs: PlaybackSong[];
-  createdAt: Date;
-  updatedAt: Date;
+  playbackLog: {
+    _id: string;
+    user: string;
+    songs: PlaybackSong[];
+    createdAt: Date;
+    updatedAt: Date;
+  };
+  shouldPrompt: boolean;
+  song: RefactorSongResponse;
 }
 
 // ===================== Constants Types =====================

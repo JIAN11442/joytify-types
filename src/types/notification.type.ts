@@ -1,4 +1,4 @@
-import { NotificationTypeOptions } from "../constants";
+import { NotificationFilterOptions } from "../constants";
 
 // ===================== Request Types =====================
 
@@ -7,7 +7,7 @@ export type CreateSystemAnnouncementRequest = SystemAnnouncement;
 // ===================== Response Types =====================
 export interface NotificationResponse {
   _id: string;
-  type: NotificationType;
+  type: NotificationFilterType;
   followingArtistUpdate?: Partial<followingArtistUpdate>;
   systemAnnouncement?: Partial<SystemAnnouncement>;
   createdAt: Date;
@@ -35,8 +35,8 @@ export interface NotificationCountsResponse {
 
 // ===================== Contants Types =====================
 
-export type NotificationType =
-  (typeof NotificationTypeOptions)[keyof typeof NotificationTypeOptions];
+export type NotificationFilterType =
+  (typeof NotificationFilterOptions)[keyof typeof NotificationFilterOptions];
 
 // ===================== Other Types =====================
 type monthlyStatistic = {

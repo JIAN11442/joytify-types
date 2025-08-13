@@ -15,7 +15,6 @@
 - [🎯 Overview](#-overview)
 - [🚀 Quick Start](#-quick-start)
 - [📦 Package Structure](#-package-structure)
-- [🔧 API Reference](#-api-reference)
 - [🛠️ Development](#️-development)
 
 ---
@@ -37,6 +36,12 @@
 - **ESM** - Modern ES modules for tree-shaking and better performance
 - **CommonJS** - Legacy compatibility for older environments
 - **TypeScript** - Full type definitions and IntelliSense support
+
+### Subpath Exports
+
+- **`@joytify/shared-types/types`** - TypeScript type definitions
+- **`@joytify/shared-types/constants`** - Shared constants and enums
+- **`@joytify/shared-types/classes`** - Utility classes
 
 ---
 
@@ -69,7 +74,7 @@ import { AppError } from "@joytify/shared-types/classes";
 
 ```
 src/
-├── types/          # TypeScript type definitions (25 files)
+├── types/          # TypeScript type definitions (27 files)
 │   ├── auth.type.ts
 │   ├── user.type.ts
 │   ├── song.type.ts
@@ -92,9 +97,11 @@ src/
 │   ├── http.type.ts
 │   ├── label.type.ts
 │   ├── paletee.type.ts
+│   ├── rating.type.ts
+│   ├── search.type.ts
 │   ├── verification.type.ts
 │   └── util.type.ts
-├── constants/      # Shared constants (17 files)
+├── constants/      # Shared constants (20 files)
 │   ├── api.constant.ts
 │   ├── auth.constant.ts
 │   ├── user.constant.ts
@@ -111,62 +118,14 @@ src/
 │   ├── aws.constant.ts
 │   ├── http.constant.ts
 │   ├── label.constant.ts
-│   └── verification.constant.ts
+│   ├── privacy.constant.ts
+│   ├── rating.constant.ts
+│   ├── search.constant.ts
+│   ├── verification.constant.ts
+│   └── user.constant.ts
 └── classes/        # Utility classes (1 file)
     └── error.class.ts
 ```
-
----
-
-## 🔧 API Reference
-
-### Core Type Categories
-
-#### 🎵 **Music & Playback**
-
-- Song, Album, Playlist structures
-- Playback queue and controls
-- Artist and musician definitions
-- Audio metadata and formats
-
-#### 👤 **User & Authentication**
-
-- User profiles and preferences
-- Authentication requests/responses
-- Session management
-- Privacy and security types
-
-#### 📊 **Statistics & Analytics**
-
-- Monthly user statistics
-- Playback analytics
-- Peak hour tracking
-- Growth metrics
-
-#### 🔔 **Notifications & Communication**
-
-- Real-time notifications
-- System announcements
-- User alerts
-- Socket events
-
-#### 🛠️ **System & Utilities**
-
-- Error handling
-- HTTP constants
-- AWS integration
-- Device and network types
-
-### Constants & Enums
-
-- **API_ENDPOINTS** - RESTful API routes
-- **HTTP_CODES** - Status codes and error handling
-- **PRIVACY_OPTIONS** - User privacy settings
-- **NOTIFICATION_TYPES** - Notification categories
-- **DEVICE_TYPES** - Device classification
-- **LOCALE_OPTIONS** - Internationalization support
-
----
 
 ## 🛠️ Development
 

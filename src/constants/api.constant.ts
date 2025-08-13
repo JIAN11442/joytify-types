@@ -15,6 +15,8 @@ export const API_ENDPOINTS = {
   MUSICIANS: "/musicians",
   NOTIFICATIONS: "/notifications",
   SESSIONS: "/sessions",
+  RATINGS: "/ratings",
+  SEARCHES: "/searches",
 
   ADMIN: "/admin",
 };

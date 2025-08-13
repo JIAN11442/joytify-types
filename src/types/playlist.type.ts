@@ -1,4 +1,4 @@
-import { RefactorSongResponse, SongResponse } from "./song.type";
+import { PopulatedSongResponse, RefactorSongResponse, SongResponse } from "./song.type";
 import { HexPaletee } from "./paletee.type";
 import { PrivacyType } from "./privacy.type";
 
@@ -54,7 +54,7 @@ export type PlaylistsResponse = PlaylistResponse[];
 
 /* get playlist by id - populate songs */
 export type PopulatedPlaylistResponse = Omit<PlaylistResponse, "songs"> & {
-  songs: SongResponse[];
+  songs: PopulatedSongResponse[];
 };
 
 /* get playlist by id - refactor song's params */

@@ -7,5 +7,4 @@ export enum LabelOptions {
   REGION = "region",
   COUNTRY = "country",
   GENDER = "gender",
-  NULL = "null",
 }

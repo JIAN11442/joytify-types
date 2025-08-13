@@ -1,13 +1,13 @@
 // ===================== Request Types =====================
 
 import { HexPaletee } from "./paletee.type";
-import { RefactorSongResponse, SongResponse } from "./song.type";
+import { PopulatedSongResponse, RefactorSongResponse } from "./song.type";
 
 export interface CreateAlbumRequest {
   title: string;
   description?: string;
   coverImage?: string;
-  artist?: string;
+  artists?: string[];
 }
 
 // ===================== Response Types =====================
@@ -18,7 +18,7 @@ export interface AlbumResponse {
   description?: string;
   coverImage?: string;
   paletee: HexPaletee;
-  artist?: string;
+  artists?: string[];
   songs: string[];
   users: string[];
   totalDuration: number;
@@ -27,7 +27,7 @@ export interface AlbumResponse {
 }
 
 export type PopulatedAlbumResponse = Omit<AlbumResponse, "songs"> & {
-  songs: SongResponse[];
+  songs: PopulatedSongResponse[];
 };
 
 export type RefactorAlbumResponse = Omit<PopulatedAlbumResponse, "songs"> & {

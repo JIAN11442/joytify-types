@@ -1,4 +1,6 @@
 import { LabelOptions } from "../constants/label.constant";
+import { PopulatedSongResponse, RefactorSongResponse } from "./song.type";
+import { HexPaletee } from "./paletee.type";
 
 // ===================== Request Types =====================
 
@@ -19,7 +21,9 @@ export interface LabelResponse {
   _id: string;
   label: string;
   type: LabelOptionsType;
-  index?: number;
+  coverImage: string;
+  paletee: HexPaletee;
+  author: string;
   users: string[];
   songs: string[];
   default: boolean;
@@ -27,7 +31,15 @@ export interface LabelResponse {
   updatedAt: Date;
 }
 
-export interface RefactorLabelResponse {
+export type PopulatedSearchLabelResponse = Omit<LabelResponse, "songs"> & {
+  songs: PopulatedSongResponse[];
+};
+
+export type RefactorSearchLabelResponse = Omit<PopulatedSearchLabelResponse, "songs"> & {
+  songs: RefactorSongResponse[];
+};
+
+export interface RefactorInputLabelResponse {
   default: LabelItems;
   created: LabelItems;
 }

@@ -4,6 +4,7 @@ import {
   SongProfileDetailsOptions,
 } from "../constants/song.constant";
 import { HexPaletee } from "./paletee.type";
+import { RatingResponse } from "./rating.type";
 
 // ===================== Request Types =====================
 
@@ -35,11 +36,10 @@ export interface UpdateSongInfoRequest {
   imageUrl?: string;
 }
 
-export interface UpdateSongRateStateRequest {
-  songId: string;
-  rating: number;
-  isLiked: boolean;
-  comment: string;
+export interface UpdateSongRateRequest {
+  rating?: number;
+  comment?: string;
+  isLiked?: boolean;
 }
 
 export interface UpdateSongPlaylistsRequest {
@@ -69,7 +69,7 @@ export interface SongResponse {
   releaseDate: Date;
   paletee: HexPaletee;
   favorites: string[];
-  ratings: PopulatedSongRate[];
+  ratings: string[];
   activities: {
     totalRatingCount: number;
     averageRating: number;
@@ -87,6 +87,24 @@ export interface SongResponse {
 
 export type SongsResponse = SongResponse[];
 
+export type PopulatedSongResponse = Omit<SongResponse, "ratings" | "artist" | "album"> & {
+  artist: { _id: string; name: string };
+  album: { _id: string; title: string };
+  ratings: PopulatedSongRate[];
+};
+
+export type RefactorSongResponse = Omit<
+  SongResponse,
+  "artist" | "album" | "lyricists" | "composers" | "languages" | "ratings"
+> & {
+  artist: { _id: string; name: string };
+  album: { _id: string; title: string };
+  lyricists: string;
+  composers: string;
+  languages: string;
+  ratings: RefactorPopulatedSongRate[];
+};
+
 export type SongStatsResponse = {
   totalSongs: number;
   totalPlaybackCount: number;
@@ -94,15 +112,15 @@ export type SongStatsResponse = {
   averageRating: number;
 };
 
-export type RefactorSongResponse = Omit<
-  SongResponse,
-  "lyricists" | "composers" | "languages" | "ratings"
-> & {
-  lyricists: string;
-  composers: string;
-  languages: string;
-  ratings: RefactorPopulatedSongRate[];
-};
+// ===================== Constant Types =====================
+
+export type SongDeleteStatusType = (typeof SongDeleteStatus)[keyof typeof SongDeleteStatus];
+
+export type SongAssociationActionType =
+  (typeof SongAssociationAction)[keyof typeof SongAssociationAction];
+
+export type SongProfileDetailsType =
+  (typeof SongProfileDetailsOptions)[keyof typeof SongProfileDetailsOptions];
 
 // ===================== Other Types =====================
 
@@ -113,29 +131,18 @@ export type Song = {
   imageUrl: string;
 };
 
-export type SongRate = {
-  id: string;
-  rating: number;
-  comment: string;
-};
-
-export type PopulatedSongRate = Omit<SongRate, "id"> & {
-  id: {
+export type PopulatedSongRate = RatingResponse & {
+  user: {
     _id: string;
     username: string;
     profileImage: string;
   };
 };
 
-export interface RefactorPopulatedSongRate extends SongRate {
+export type RefactorPopulatedSongRate = {
+  id: string;
   username: string;
   profileImage: string;
-}
-
-export type SongDeleteStatusType = (typeof SongDeleteStatus)[keyof typeof SongDeleteStatus];
-
-export type SongAssociationActionType =
-  (typeof SongAssociationAction)[keyof typeof SongAssociationAction];
-
-export type SongProfileDetailsType =
-  (typeof SongProfileDetailsOptions)[keyof typeof SongProfileDetailsOptions];
+  rating: number;
+  comment: string;
+};

@@ -1,13 +1,16 @@
 export * from "./auth.type";
 export * from "./user.type";
-export * from "./playlist.type";
 export * from "./song.type";
+export * from "./playlist.type";
 export * from "./label.type";
 export * from "./album.type";
 export * from "./musician.type";
 export * from "./playback.type";
 export * from "./verification.type";
 export * from "./notification.type";
+export * from "./stats.type";
+export * from "./rating.type";
+export * from "./search.type";
 
 export * from "./aws.type";
 export * from "./paletee.type";
@@ -18,8 +21,7 @@ export * from "./cookie.type";
 export * from "./locale.type";
 export * from "./gender.type";
 export * from "./player.type";
-export * from "./util.type";
 export * from "./device.type";
 export * from "./session.type";
 export * from "./network.type";
-export * from "./stats.type";
+export * from "./util.type";
