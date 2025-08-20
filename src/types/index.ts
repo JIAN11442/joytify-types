@@ -11,6 +11,7 @@ export * from "./notification.type";
 export * from "./stats.type";
 export * from "./rating.type";
 export * from "./search.type";
+export * from "./homepage.type";
 
 export * from "./aws.type";
 export * from "./paletee.type";

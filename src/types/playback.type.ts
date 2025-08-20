@@ -1,5 +1,5 @@
 import { PlaybackStateOptions } from "../constants/playback.constant";
-import { RefactorSongResponse } from "./song.type";
+import { PopulatedSongResponse, RefactorSongResponse } from "./song.type";
 import { NonEmptyArray } from "./util.type";
 
 // ===================== Request Types =====================
@@ -13,17 +13,31 @@ export interface CreatePlaybackLogRequest {
 
 // ===================== Response Types =====================
 
+export interface BasePlaybackLogResponse {
+  _id: string;
+  user: string;
+  song: string;
+  artist: string;
+  state: PlaybackStateType;
+  duration: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface PlaybackLogResponse {
-  playbackLog: {
-    _id: string;
-    user: string;
-    songs: PlaybackSong[];
-    createdAt: Date;
-    updatedAt: Date;
-  };
+  playbackLog: BasePlaybackLogResponse;
   shouldPrompt: boolean;
   song: RefactorSongResponse;
 }
+
+export type PopulatedPlaybackLogResponse = Omit<BasePlaybackLogResponse, "song"> & {
+  song: PopulatedSongResponse;
+};
+
+export type RefactorPlaybackLogResponse = {
+  _id: string;
+  song: RefactorSongResponse;
+};
 
 // ===================== Constants Types =====================
 

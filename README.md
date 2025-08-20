@@ -74,7 +74,7 @@ import { AppError } from "@joytify/shared-types/classes";
 
 ```
 src/
-├── types/          # TypeScript type definitions (27 files)
+├── types/          # TypeScript type definitions (28 files)
 │   ├── auth.type.ts
 │   ├── user.type.ts
 │   ├── song.type.ts
@@ -99,9 +99,10 @@ src/
 │   ├── paletee.type.ts
 │   ├── rating.type.ts
 │   ├── search.type.ts
+│   ├── homepage.type.ts
 │   ├── verification.type.ts
 │   └── util.type.ts
-├── constants/      # Shared constants (20 files)
+├── constants/      # Shared constants (21 files)
 │   ├── api.constant.ts
 │   ├── auth.constant.ts
 │   ├── user.constant.ts
@@ -121,6 +122,7 @@ src/
 │   ├── privacy.constant.ts
 │   ├── rating.constant.ts
 │   ├── search.constant.ts
+│   ├── homepage.constant.ts
 │   ├── verification.constant.ts
 │   └── user.constant.ts
 └── classes/        # Utility classes (1 file)

@@ -48,6 +48,11 @@ export interface UpdateSongPlaylistsRequest {
   playlistsToRemove: string[];
 }
 
+export interface GetSongsByQueryRequest {
+  query: string;
+  playlistId?: string;
+}
+
 // ===================== Response Types =====================
 
 export interface SongResponse {
@@ -103,6 +108,12 @@ export type RefactorSongResponse = Omit<
   composers: string;
   languages: string;
   ratings: RefactorPopulatedSongRate[];
+};
+
+export type PaginatedSongsResponse = {
+  page: number;
+  totalDocs: number;
+  docs: RefactorSongResponse[];
 };
 
 export type SongStatsResponse = {

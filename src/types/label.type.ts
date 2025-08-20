@@ -39,6 +39,12 @@ export type RefactorSearchLabelResponse = Omit<PopulatedSearchLabelResponse, "so
   songs: RefactorSongResponse[];
 };
 
+export type PaginatedLabelResponse = {
+  page: number;
+  totalDocs: number;
+  docs: RefactorSearchLabelResponse[];
+};
+
 export interface RefactorInputLabelResponse {
   default: LabelItems;
   created: LabelItems;

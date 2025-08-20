@@ -34,6 +34,12 @@ export type RefactorAlbumResponse = Omit<PopulatedAlbumResponse, "songs"> & {
   songs: RefactorSongResponse[];
 };
 
+export type PaginatedAlbumResponse = {
+  page: number;
+  totalDocs: number;
+  docs: RefactorAlbumResponse[];
+};
+
 // ===================== Other Types =====================
 export type Album = {
   _id: string;

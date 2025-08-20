@@ -10,6 +10,7 @@ export * from "./verification.constant.js";
 export * from "./notification.constant.js";
 export * from "./rating.constant.js";
 export * from "./search.constant.js";
+export * from "./homepage.constant.js";
 
 export * from "./aws.constant.js";
 export * from "./privacy.constant.js";

@@ -34,6 +34,12 @@ export type RefactorMusicianResponse = Omit<PopulatedMusicianResponse, "songs"> 
   songs: RefactorSongResponse[];
 };
 
+export type PaginatedMusicianResponse = {
+  page: number;
+  totalDocs: number;
+  docs: RefactorMusicianResponse[];
+};
+
 // ===================== Constants Types =====================
 
 export type MusicianType = (typeof MusicianOptions)[keyof typeof MusicianOptions];

@@ -17,6 +17,7 @@ export const API_ENDPOINTS = {
   SESSIONS: "/sessions",
   RATINGS: "/ratings",
   SEARCHES: "/searches",
+  HOMEPAGE: "/homepage",
 
   ADMIN: "/admin",
 };
