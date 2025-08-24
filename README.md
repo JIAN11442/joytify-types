@@ -102,7 +102,7 @@ src/
 │   ├── homepage.type.ts
 │   ├── verification.type.ts
 │   └── util.type.ts
-├── constants/      # Shared constants (21 files)
+├── constants/      # Shared constants (22 files)
 │   ├── api.constant.ts
 │   ├── auth.constant.ts
 │   ├── user.constant.ts

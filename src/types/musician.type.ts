@@ -10,10 +10,17 @@ export type GetMusicianIdRequest = {
   createIfAbsent?: boolean;
 };
 
+export type UpdateMusicianRequest = {
+  musicianId: string;
+  name?: string;
+  coverImage?: string;
+};
+
 // ===================== Response Types =====================
 
 export type MusicianResponse = {
   _id: string;
+  creator: string;
   name: string;
   roles: string[];
   bio: string;

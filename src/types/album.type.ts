@@ -3,6 +3,8 @@
 import { HexPaletee } from "./paletee.type";
 import { PopulatedSongResponse, RefactorSongResponse } from "./song.type";
 
+// ===================== Request Types =====================
+
 export interface CreateAlbumRequest {
   title: string;
   description?: string;
@@ -10,10 +12,17 @@ export interface CreateAlbumRequest {
   artists?: string[];
 }
 
+export type UpdateAlbumRequest = {
+  albumId: string;
+  title?: string;
+  coverImage?: string;
+};
+
 // ===================== Response Types =====================
 
 export interface AlbumResponse {
   _id: string;
+  creator: string;
   title: string;
   description?: string;
   coverImage?: string;

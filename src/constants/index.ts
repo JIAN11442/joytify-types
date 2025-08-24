@@ -20,3 +20,4 @@ export * from "./locale.constant.js";
 export * from "./gender.constant.js";
 export * from "./player.constant.js";
 export * from "./device.constant.js";
+export * from "./keyboard.constant.js";
