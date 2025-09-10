@@ -1,4 +1,4 @@
-# <img src="https://mern-joytify-bucket-yj.s3.ap-northeast-1.amazonaws.com/defaults/joytify-logo.svg" alt="Joytify" width="26" height="26"> @joytify/shared-types
+# <img src="https://mern-joytify-bucket-yj.s3.ap-northeast-1.amazonaws.com/defaults/joytify-logo.svg" alt="Joytify" width="26" height="26"> @joytify/types
 
 > **Internal shared types, constants, and utility classes for Joytify project** - A comprehensive TypeScript package providing type safety and consistency across frontend and backend development
 
@@ -21,7 +21,7 @@
 
 ## 🎯 Overview
 
-**@joytify/shared-types** is the core TypeScript package that powers Joytify's full-stack development ecosystem. This package provides a unified set of types, constants, and utility classes that ensure type safety and consistency across frontend and backend applications.
+**@joytify/types** is the core TypeScript package that powers Joytify's full-stack development ecosystem. This package provides a unified set of types, constants, and utility classes that ensure type safety and consistency across frontend and backend applications.
 
 ### Key Features
 
@@ -39,9 +39,9 @@
 
 ### Subpath Exports
 
-- **`@joytify/shared-types/types`** - TypeScript type definitions
-- **`@joytify/shared-types/constants`** - Shared constants and enums
-- **`@joytify/shared-types/classes`** - Utility classes
+- **`@joytify/types/types`** - TypeScript type definitions
+- **`@joytify/types/constants`** - Shared constants and enums
+- **`@joytify/types/classes`** - Utility classes
 
 ---
 
@@ -50,22 +50,22 @@
 ### Installation
 
 ```bash
-npm install @joytify/shared-types
+npm install @joytify/types
 ```
 
-📦 **Package**: [@joytify/shared-types on npm](https://www.npmjs.com/package/@joytify/shared-types)
+📦 **Package**: [@joytify/types on npm](https://www.npmjs.com/package/@joytify/types)
 
 ### Usage
 
 ```typescript
 // Import specific types
-import { User, Playlist, Song } from "@joytify/shared-types/types";
+import { User, Playlist, Song } from "@joytify/types/types";
 
 // Import constants
-import { API_ENDPOINTS, PRIVACY_OPTIONS } from "@joytify/shared-types/constants";
+import { API_ENDPOINTS, PRIVACY_OPTIONS } from "@joytify/types/constants";
 
 // Import utility classes
-import { AppError } from "@joytify/shared-types/classes";
+import { AppError } from "@joytify/types/classes";
 ```
 
 ---

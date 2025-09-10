@@ -1,6 +1,6 @@
 {
-  "name": "@joytify/shared-types",
-  "version": "1.6.0",
+  "name": "@joytify/types",
+  "version": "1.7.0",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JIAN11442/joytify-shared-types.git"
+    "url": "https://github.com/JIAN11442/joytify-types.git"
   },
   "keywords": [],
   "author": "JIAN",
