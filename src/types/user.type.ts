@@ -22,13 +22,19 @@ export interface UpdateUserInfoRequest {
   systemAnnouncement?: boolean;
 }
 
+export interface UpdatePasswordRequest {
+  currentPassword?: string;
+  newPassword: string;
+}
+
 export interface ChangePasswordRequest {
   currentPassword: string;
   newPassword: string;
 }
 
-export interface ResetPasswordRequest extends ChangePasswordRequest {
+export interface ResetPasswordRequest {
   token: string;
+  newPassword: string;
 }
 
 export interface ProfileCollectionInfoRequest {
