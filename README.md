@@ -4,9 +4,9 @@
 
 ## 📋 Project Documentation
 
-- **🏠 [Main Application](https://github.com/JIAN11442/MERN-Joytify/tree/main)** - Application overview, tech stack, features
-- **🏗️ [Infrastructure Pipeline](https://github.com/JIAN11442/MERN-Joytify/tree/main/terraform)** - AWS Lambda processing pipeline, capacity analysis
-- **📚 [Shared Types](./README.md)** - Shared TypeScript interfaces _(You are here)_
+- **🏠 [Main Application](https://github.com/JIAN11442/joytify-app)** - Application overview, tech stack, features
+- **⏰ [Scheduler Infrastructure](https://github.com/JIAN11442/joytify-app/tree/main/scheduler)** - Terragrunt-managed serverless scheduler
+- **📚 [Shared Types](./README.md)** - Shared TypeScript types, constants, and utilities _(You are here)_
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## 🎯 Overview
 
-**@joytify/types** is the core TypeScript package that powers Joytify's full-stack development ecosystem. This package provides a unified set of types, constants, and utility classes that ensure type safety and consistency across frontend and backend applications.
+**@joytify/types** (v1.7.1) is the core TypeScript package that powers Joytify's full-stack development ecosystem. This package provides a unified set of types, constants, and utility classes that ensure type safety and consistency across frontend and backend applications.
 
 ### Key Features
 
@@ -62,7 +62,7 @@ npm install @joytify/types
 import { User, Playlist, Song } from "@joytify/types/types";
 
 // Import constants
-import { API_ENDPOINTS, PRIVACY_OPTIONS } from "@joytify/types/constants";
+import { PrivacyOptions } from "@joytify/types/constants";
 
 // Import utility classes
 import { AppError } from "@joytify/types/classes";
@@ -74,59 +74,59 @@ import { AppError } from "@joytify/types/classes";
 
 ```
 src/
-├── types/          # TypeScript type definitions (28 files)
-│   ├── auth.type.ts
-│   ├── user.type.ts
-│   ├── song.type.ts
-│   ├── playlist.type.ts
+├── types/          # TypeScript type definitions (27 files)
 │   ├── album.type.ts
-│   ├── musician.type.ts
-│   ├── notification.type.ts
-│   ├── stats.type.ts
-│   ├── playback.type.ts
-│   ├── session.type.ts
-│   ├── device.type.ts
-│   ├── network.type.ts
-│   ├── cookie.type.ts
-│   ├── player.type.ts
-│   ├── gender.type.ts
-│   ├── locale.type.ts
-│   ├── error.type.ts
-│   ├── privacy.type.ts
+│   ├── auth.type.ts
 │   ├── aws.type.ts
+│   ├── cookie.type.ts
+│   ├── device.type.ts
+│   ├── error.type.ts
+│   ├── gender.type.ts
+│   ├── homepage.type.ts
 │   ├── http.type.ts
 │   ├── label.type.ts
+│   ├── locale.type.ts
+│   ├── musician.type.ts
+│   ├── network.type.ts
+│   ├── notification.type.ts
 │   ├── paletee.type.ts
+│   ├── playback.type.ts
+│   ├── player.type.ts
+│   ├── playlist.type.ts
+│   ├── privacy.type.ts
 │   ├── rating.type.ts
 │   ├── search.type.ts
-│   ├── homepage.type.ts
-│   ├── verification.type.ts
-│   └── util.type.ts
-├── constants/      # Shared constants (22 files)
+│   ├── session.type.ts
+│   ├── song.type.ts
+│   ├── stats.type.ts
+│   ├── user.type.ts
+│   ├── util.type.ts
+│   └── verification.type.ts
+├── constants/      # Shared constants (21 files)
 │   ├── api.constant.ts
 │   ├── auth.constant.ts
-│   ├── user.constant.ts
-│   ├── song.constant.ts
-│   ├── playlist.constant.ts
-│   ├── album.constant.ts
+│   ├── aws.constant.ts
+│   ├── device.constant.ts
+│   ├── error.constant.ts
+│   ├── gender.constant.ts
+│   ├── homepage.constant.ts
+│   ├── http.constant.ts
+│   ├── keyboard.constant.ts
+│   ├── label.constant.ts
+│   ├── locale.constant.ts
 │   ├── musician.constant.ts
 │   ├── notification.constant.ts
-│   ├── stats.constant.ts
 │   ├── playback.constant.ts
-│   ├── session.constant.ts
-│   ├── device.constant.ts
-│   ├── network.constant.ts
-│   ├── aws.constant.ts
-│   ├── http.constant.ts
-│   ├── label.constant.ts
+│   ├── player.constant.ts
 │   ├── privacy.constant.ts
 │   ├── rating.constant.ts
 │   ├── search.constant.ts
-│   ├── homepage.constant.ts
-│   ├── verification.constant.ts
-│   └── user.constant.ts
-└── classes/        # Utility classes (1 file)
-    └── error.class.ts
+│   ├── song.constant.ts
+│   ├── user.constant.ts
+│   └── verification.constant.ts
+├── classes/        # Utility classes (1 file)
+│   └── error.class.ts
+└── utils/          # Utility functions (currently unused)
 ```
 
 ## 🛠️ Development
